@@ -16,14 +16,15 @@ public class Skill {
     @Column(name = "skill_id")
     private long skill_id;
 
+    @NonNull
     @Column(name = "skill_description", columnDefinition = "VARCHAR(255)")
     private String skill_description;
 
+    @NonNull
     @Column(name = "skill_name", columnDefinition = "VARCHAR(255)")
     private String skill_name;
 
+    @NonNull
     @Column(name = "type", columnDefinition = "TINYINT(4)")
     private String type;
-
-
 }
