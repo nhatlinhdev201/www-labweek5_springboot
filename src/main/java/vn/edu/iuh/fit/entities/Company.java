@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "company")
 @NoArgsConstructor
@@ -36,4 +38,10 @@ public class Company {
     @NonNull
     @Column(name = "web_ul")
     private String web_url;
+
+    @OneToOne(mappedBy = "company")
+    private Address address;
+
+    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Job> lstJob;
 }
